@@ -1,16 +1,10 @@
-
-var assert = require('chai').assert;
 var expect = require('expect.js')
 var http = require('http');
 var request = require('superagent')
-var rr = require('supertest')
 var server = require('../server');
-
+var chat = require('../lib/chat_server')
 
 describe('server', function() {
-  beforeEach(function() {
-    server;
-  });
 
   it("should return a 200 response for a valid page", function (done) {
 
@@ -35,5 +29,12 @@ describe('server', function() {
   });
 
 });
+
+describe('chat_server', function() {
+  it("assigns a guest's name", function() {
+    //chat.listen();
+    console.log('test' + chat.getGuestNumber())
+  })
+})
 
 
