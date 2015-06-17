@@ -4,6 +4,16 @@ var request = require('superagent')
 var server = require('../server');
 var chat = require('../lib/chat_server')
 
+var io = require('socket.io-client')
+var socketURL = 'http://127.0.0.1:8282'
+var options = {
+  transports: ['websockets'],
+  'force new connection': true
+};
+
+var chatUser1 = {'name': 'jim'}
+var chatUser2 = {'name': 'john'}
+
 describe('server', function() {
 
   it("should return a 200 response for a valid page", function (done) {
@@ -32,7 +42,7 @@ describe('server', function() {
 
 describe('chat_server', function() {
   it("assigns a guest's name", function() {
-    //chat.listen();
+
     console.log('test' + chat.getGuestNumber())
   })
 })
