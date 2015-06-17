@@ -54,7 +54,7 @@ var ipaddress = '127.0.0.1';
 var port = 5000;
 
 
-server.listen(port, function() {
+server.listen(process.env.PORT || port, function() {
   console.log("server is listening on port " + port)
 })
 
